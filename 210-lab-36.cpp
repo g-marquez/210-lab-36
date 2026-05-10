@@ -29,5 +29,9 @@ int main() {
         return 1;
     }
 
+    //output BST for Milestone 3
+    cout << "Here are the values in the tree:\n";
+    tree.displayInOrder();
+
     return 0;
 }
