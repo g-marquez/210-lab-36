@@ -31,9 +31,8 @@ int main() {
         return 1;
     }
 
-    //output BST for Milestone 3
-    cout << "Here are the values in the tree:\n";
-    tree.displayInOrder();
+    //display main menu for program
+    int choice = main_menu();
 
     return 0;
 }
@@ -43,5 +42,21 @@ int main() {
 //arguments: N/A
 //returns: an integer used as the user's choice for what operation to perform
 int main_menu() {
-    
+    //read choice as a string, then convert to help with input validation
+    string choice;
+    cout << "1. Add Record" << endl
+         << "2. Delete Record" << endl
+         << "3. Search for Record" << endl
+         << "4. Modify Record" << endl
+         << "5. Exit" << endl;
+    cout << "Choice --> ";
+    cin >> choice;
+    //check if input string is anything except for numbers 1-5
+    while (choice != "1" && choice != "2" && choice != "3" && 
+           choice != "4" && choice != "5") {
+        cout << "Invalid choice, try again --> ";
+        cin >> choice;
+    }
+    //convert to int and return if input is valid
+    return stoi(choice);
 }
