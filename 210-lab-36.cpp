@@ -11,6 +11,10 @@
 using namespace std;
 
 int main_menu();
+void add_record(StrBinaryTree &);
+void delete_record(StrBinaryTree &);
+void search_record(StrBinaryTree &);
+void modify_record(StrBinaryTree &);
 
 string FILE_NAME = "codes.txt";
 
@@ -33,6 +37,17 @@ int main() {
 
     //display main menu for program
     int choice = main_menu();
+    while (choice != 5) {
+        switch (choice) {
+            case 1: add_record(tree); break;
+            case 2: delete_record(tree); break;
+            case 3: search_record(tree); break;
+            case 4: modify_record(tree); break;
+        }
+        choice = main_menu();
+    }
+    cout << "Goodbye" << endl;
+    return 0;
 
     return 0;
 }
