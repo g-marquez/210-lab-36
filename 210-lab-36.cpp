@@ -10,6 +10,8 @@
 #include "StrBinaryTree.h"
 using namespace std;
 
+int main_menu();
+
 string FILE_NAME = "codes.txt";
 
 int main() {
@@ -34,4 +36,12 @@ int main() {
     tree.displayInOrder();
 
     return 0;
+}
+
+//description: main_menu() displays the menu options that give the user options
+// of what do do in the program
+//arguments: N/A
+//returns: an integer used as the user's choice for what operation to perform
+int main_menu() {
+    
 }
