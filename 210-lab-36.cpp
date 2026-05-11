@@ -13,7 +13,7 @@ using namespace std;
 int main_menu();
 void add_record(StrBinaryTree &);
 void delete_record(StrBinaryTree &);
-bool search_record(const StrBinaryTree &);
+void search_record(StrBinaryTree &);
 void modify_record(StrBinaryTree &);
 
 string FILE_NAME = "codes.txt";
@@ -106,8 +106,22 @@ void delete_record(StrBinaryTree &tree) {
 }
 
 //description: search_record() checks if a record exists in the passed BST
-//arguments: a BST of type StrBinaryTree passed by constant reference
+//arguments: a BST of type StrBinaryTree passed by reference
 //returns: void
-bool search_record(const StrBinaryTree &tree) {
+void search_record(StrBinaryTree &tree) {
+    cout << "Please enter a record to search for:" << endl;
+    cout << "--> ";
+    string entry;
+    cin >> entry;
+    cout << "Searchng for " << entry << "..." << endl;
+    bool found = tree.searchNode(entry);
+    cout << entry;
+    if (!found) 
+        cout << " not found!" << endl;
+    else
+        cout << " found!" << endl;
+}
+
+void modify_record(StrBinaryTree &tree) {
     
 }
