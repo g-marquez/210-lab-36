@@ -74,3 +74,22 @@ int main_menu() {
     //convert to int and return if input is valid
     return stoi(choice);
 }
+
+//description: add_record() adds a record to the passed BST
+//arguments: a BST of type StrBinaryTree passed by reference
+//returns: void
+void add_record(StrBinaryTree &tree) {
+    cout << "Please enter a record to add:" << endl;
+    cout << "--> ";
+    string entry;
+    cin >> entry;
+    tree.insertNode(entry);
+    cout << entry << " added." << endl;
+}
+
+//description: delete_record() deletes a record from the passed BST
+//arguments: a BST of type StrBinaryTree passed by reference
+//returns: void
+void delete_record(StrBinaryTree &tree) {
+    
+}
