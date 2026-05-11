@@ -58,6 +58,8 @@ int main() {
 int main_menu() {
     //read choice as a string, then convert to help with input validation
     string choice;
+    cout << "BST Main Menu" << endl
+         << "=============" << endl;
     cout << "1. Add Record" << endl
          << "2. Delete Record" << endl
          << "3. Search for Record" << endl
@@ -84,7 +86,7 @@ void add_record(StrBinaryTree &tree) {
     string entry;
     cin >> entry;
     tree.insertNode(entry);
-    cout << entry << " added." << endl;
+    cout << entry << " added." << endl << endl;
 }
 
 //description: delete_record() deletes a record from the passed BST
@@ -98,11 +100,13 @@ void delete_record(StrBinaryTree &tree) {
 
     //check if entry exists in BST
     if (!tree.searchNode(entry)) {
-        cout << "Sorry, entry not found." << endl;
+        cout << "Sorry, entry not found." << endl << endl;
         return;
     }
-    else //remove if found in BST
+    else {//remove if found in BST
         tree.remove(entry);
+        cout << entry << " deleted!" << endl << endl;
+    }
 }
 
 //description: search_record() checks if a record exists in the passed BST
@@ -117,9 +121,9 @@ void search_record(StrBinaryTree &tree) {
     bool found = tree.searchNode(entry);
     cout << entry;
     if (!found) 
-        cout << " not found!" << endl;
+        cout << " not found!" << endl << endl;
     else
-        cout << " found!" << endl;
+        cout << " found!" << endl << endl;
 }
 
 //description: modify_record() removes a record entered by the user and inserts
@@ -134,7 +138,7 @@ void modify_record(StrBinaryTree &tree) {
 
     //check if entry exists in BST
     if (!tree.searchNode(entry)) {
-        cout << "Sorry, entry not found." << endl;
+        cout << "Sorry, entry not found." << endl << endl;
         return;
     }
     else { //modify if found in BST
@@ -143,5 +147,7 @@ void modify_record(StrBinaryTree &tree) {
         cout << "--> ";
         string mod;
         cin >> mod;
+        tree.insertNode(mod);
+        cout << entry << " successfully modified to " << mod << endl << endl;
     }
 }
