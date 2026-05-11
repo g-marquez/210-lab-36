@@ -38,6 +38,7 @@ int main() {
     //display main menu for program
     int choice = main_menu();
     while (choice != 5) {
+        //input vaidated in main_menu() function
         switch (choice) {
             case 1: add_record(tree); break;
             case 2: delete_record(tree); break;
@@ -47,8 +48,6 @@ int main() {
         choice = main_menu();
     }
     cout << "Goodbye" << endl;
-    return 0;
-
     return 0;
 }
 
