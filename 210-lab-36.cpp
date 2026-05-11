@@ -122,6 +122,26 @@ void search_record(StrBinaryTree &tree) {
         cout << " found!" << endl;
 }
 
+//description: modify_record() removes a record entered by the user and inserts
+// the modified version into the passed BST
+//arguments: a BST of type StrBinaryTree passed by reference
+//returns: void
 void modify_record(StrBinaryTree &tree) {
-    
+    cout << "Please enter a record to modify:" << endl;
+    cout << "--> ";
+    string entry;
+    cin >> entry;
+
+    //check if entry exists in BST
+    if (!tree.searchNode(entry)) {
+        cout << "Sorry, entry not found." << endl;
+        return;
+    }
+    else { //modify if found in BST
+        tree.remove(entry);
+        cout << "Please enter the modification:" << endl;
+        cout << "--> ";
+        string mod;
+        cin >> mod;
+    }
 }
